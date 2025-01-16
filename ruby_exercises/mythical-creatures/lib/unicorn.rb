@@ -14,5 +14,4 @@ class Unicorn
     def say(sentence)
         "**;* #{sentence} **;*"
     end
-
 end
