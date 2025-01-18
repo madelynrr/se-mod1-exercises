@@ -1,5 +1,6 @@
 require './spec/spec_helper'
 require './lib/direwolf'
+require './lib/stark'
 
 RSpec.describe Direwolf do
   it 'has a name' do
