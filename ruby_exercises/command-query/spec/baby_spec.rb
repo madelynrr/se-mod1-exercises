@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative 'baby'
+require './lib/baby'
 
 RSpec.describe Baby do
   it 'is tired' do
