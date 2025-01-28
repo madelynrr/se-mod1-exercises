@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative 'apple'
+require './lib/apple'
 
 RSpec.describe Apple do
   it 'is not ripe when created' do
