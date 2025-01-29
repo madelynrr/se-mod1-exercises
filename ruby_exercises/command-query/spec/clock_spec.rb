@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative 'clock'
+require './lib/clock'
 
 RSpec.describe Clock do
   it 'starts at 6' do
@@ -21,5 +21,8 @@ RSpec.describe Clock do
 
     8.times { clock.wait }
     expect(clock.time).to eq(2)
+
+    4.times { clock.wait }
+    expect(clock.time).to eq(6)
   end
 end
