@@ -1,6 +1,6 @@
 require 'rspec'
-require_relative 'cupcake'
-require_relative 'cupcakes'
+require './lib/cupcake'
+require './lib/cupcakes'
 
 RSpec.describe Cupcakes do
   it 'has no sweetest when there are no cupcakes' do
