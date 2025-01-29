@@ -21,5 +21,8 @@ RSpec.describe Clock do
 
     8.times { clock.wait }
     expect(clock.time).to eq(2)
+
+    4.times { clock.wait }
+    expect(clock.time).to eq(6)
   end
 end
