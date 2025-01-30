@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative 'music'
+require './lib/music'
 
 RSpec.describe Music do
   it 'is not loud' do
@@ -8,7 +8,7 @@ RSpec.describe Music do
     expect(music.loud?).to be false
   end
 
-  xit 'is loud after turning up the volume' do
+  it 'is loud after turning up the volume' do
     music = Music.new
 
     music.turn_up
