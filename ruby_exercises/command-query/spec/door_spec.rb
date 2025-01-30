@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative 'door'
+require './lib/door'
 
 RSpec.describe Door do
   it 'is locked' do
@@ -8,7 +8,7 @@ RSpec.describe Door do
     expect(door.locked?).to be true
   end
 
-  xit 'unlocks the door' do
+  it 'unlocks the door' do
     door = Door.new
 
     door.unlock
