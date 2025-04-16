@@ -1,3 +1,6 @@
+require "./lib/apartment"
+require "./lib/room"
+
 RSpec.describe Apartment do
     it "initializes with a state of rented is false" do
         apartment = Apartment.new
@@ -16,7 +19,7 @@ RSpec.describe Apartment do
 
         expect(apartment.is_rented?).to eq(false)
 
-        apartment.rented
+        apartment.rent
 
         expect(apartment.is_rented?).to eq(true)
     end
@@ -46,6 +49,11 @@ RSpec.describe Apartment do
         apartment.add_room(laundry)
 
         expect(apartment.rooms.count).to eq(4)
+        expect(apartment.rooms).to include(bathroom)
+        expect(apartment.rooms).to include(kitchen)
+        expect(apartment.rooms).to include(bedroom)
+        expect(apartment.rooms).to include(den)
+        expect(apartment.rooms).to_not include(laundry)
     end
 
     it "can list rooms alphabetically" do
