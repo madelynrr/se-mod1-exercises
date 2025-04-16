@@ -1,3 +1,6 @@
+require "./lib/building"
+require "./lib/apartment"
+
 RSpec.describe Building do
     it "can a building number and name" do
         building = Building.new("123", "Palace Gardens")
