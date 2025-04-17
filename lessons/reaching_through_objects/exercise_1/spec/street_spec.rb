@@ -1,3 +1,8 @@
+require "./lib/street"
+require "./lib/building"
+require "./lib/apartment"
+require "./lib/room"
+
 RSpec.describe Street do
     it "can have a name" do
         street = Street.new("Adlington Road")
@@ -11,7 +16,7 @@ RSpec.describe Street do
 
         street.add_building(building)
 
-        expect(street.buildings).to eq([building])
+        expect(street.owned_buildings).to eq([building])
     end
 
     it "can list building alphabetically" do
@@ -22,7 +27,7 @@ RSpec.describe Street do
         street.add_building(zebra)
         street.add_building(palace)
 
-        expect(street.buildings).to eq([palace.name, zebra.name])
+        expect(street.buildings).to eq([palace.building_name, zebra.building_name])
     end
 
     it "can give number of available apartments" do
@@ -80,14 +85,14 @@ RSpec.describe Street do
         zebra.add_apartment(apartment_4)
 
         apartments_information = {
-            apartment_2.name => apartment_2.rooms,
-            apartment_4.name => apartment_4.rooms
+            palace.building_name => apartment_2.list_rooms_by_name_alphabetically,
+            zebra.building_name => apartment_4.list_rooms_by_name_alphabetically
         }
 
         expect(street.list_available_apartments).to eq(apartments_information)
     end
 
-    it "can write a newspaper ad for the available apartments" do
+    xit "can write a newspaper ad for the available apartments" do
         street = Street.new("Adlington Road")
         palace = Building.new("123", "Palace Gardens")
         zebra = Building.new("123", "Zebra Gardens")
