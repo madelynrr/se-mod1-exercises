@@ -12,7 +12,6 @@
 # By name length (shortest to longest)
 # By number of children (least to most)
 
-
 class Person
   attr_reader :name,
               :age,
@@ -31,3 +30,20 @@ kardashians << Person.new("Kim", 41, ["North", "Saint", "Chicago", "Psalm"])
 kardashians << Person.new("Kris", 65, ["Kourtney", "Kim", "Khloe", "Rob", "Kendall", "Kylie"])
 kardashians << Person.new("Khloe", 37, ["True"])
 
+min_name = kardashians.min_by { |person| person.name }
+max_name = kardashians.max_by { |person| person.name }
+
+min_age = kardashians.min_by { |person| person.age }
+max_age = kardashians.max_by { |person| person.age }
+
+min_name_length = kardashians.min_by { |person| person.name.length }
+max_name_length = kardashians.max_by { |person| person.name.length }
+
+min_kids = kardashians.min_by { |person| person.children.length }
+max_kids = kardashians.max_by { |person| person.children.length }
+
+
+by_name = kardashians.sort_by { |person| person.name }
+by_age = kardashians.sort_by { |person| person.age }
+by_name_length = kardashians.sort_by { |person| person.name.length }
+by_kids = kardashians.sort_by { |person| person.children.length }
